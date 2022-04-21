@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bài tập 1</title>
+    <style>
+      .main {
+        width: 700px;
+        height: 500px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-color: #d3d3d3;
+      }
+      .o1 {
+        padding: 10px;
+      }
+      .o1 input {
+        width: 95%;
+        height: 20px;
+      }
+      .o2 {
+        display: flex;
+        padding: 10px;
+      }
+      .o2 div {
+        width: 100%;
+      }
+      .o2 input {
+        width: 90%;
+        height: 20px;
+      }
+      .o2 select {
+        width: 90%;
+        height: 20px;
+      }
+      .o3 {
+        padding: 10px;
+        display: flex;
+      }
+      .o3 div {
+        width: 33.33%;
+      }
+      .o4 {
+        padding: 10px;
+      }
+      .o4 input {
+        width: 100px;
+        height: 50px;
+        color: blue;
+        border: 1px solid;
+      }
+      input {
+        border: 1px;
+        border-radius: 5px;
+      }
+      select {
+        border: 1px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Contact us</h1>
+      <form>
+        <div class="o1">
+          <label>Your name (required)</label>
+          <input type="text" placeholder="enter your name" />
+        </div>
+        <div class="o2">
+          <div>
+            <label>Your phone number</label>
+            <input type="text" placeholder="enter your phone number" />
+          </div>
+          <div>
+            <label>Your email (required)</label>
+            <input type="text" placeholder="enter your email" />
+          </div>
+        </div>
+        <div class="o2">
+          <div>
+            <label>Major</label>
+            <select>
+              <option>Computer sience</option>
+            </select>
+          </div>
+          <div>
+            <label>Location to study</label>
+            <select>
+              <option>New York</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="o3">
+            <label>Register to</label>
+          </div>
+          <div class="o3">
+            <div>
+              <input type="checkbox" />
+              <label for="vehicle1"> Study</label>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label for="vehicle2"> Take a tour</label>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label for="vehicle3"> Consult</label>
+            </div>
+          </div>
+        </div>
+        <div class="o4">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

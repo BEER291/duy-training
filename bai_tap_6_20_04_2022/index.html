@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class=" content bg-dark text-white text-center small">
+        <p>SPEND $99 AND GET FREE SHIPPING AUSTRALIA WIDE</p>
+    </div>
+    <header class="container-fluid" onmouseover="showheader()" onmouseout="hideheader()">
+        <div class="container d-flex justify-content-between">
+            <div class="leftheader d-flex w-25 align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg><a href="">STORES</a>
+            </div>
+            <div class="logo1">
+                <img src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/TAB_Logo_Stacked_White_160x.png?v=1649580544"
+                    alt="">
+            </div>
+            <div class="logo2"><img
+                    src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/TAB_Logo_Stacked_Black_160x.png?v=1649579160"
+                    alt=""></div>
+            <div class="rightheader d-flex w-25 align-items-center justify-content-end">
+                <button class="btn" onclick="search()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></button>
+                <div class="dropdown">
+                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        LOGIN
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel">CART</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <hr>
+                        <p>Spend $99.00 more and get free shipping!</p>
+                        <hr>
+                        <p>YOUR CART IS EMPTY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <ul class="nav justify-content-center text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onmouseover="shownavmens()" onmouseout="hidenavmens()">MENS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onmouseover="shownavwomens()" onmouseout="hidenavwomens()">WOMENS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onmouseover="shownavkids()" onmouseout="hidenavkids()">KIDS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">REWARDS</a>
+                </li>
+            </ul>
+        </div>
+        <div id="search" class="container-fluid headernav">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg></span><input type="search" placeholder="SEARCH..."><button onclick="closesearch()" type="button"
+                class="btn-close" aria-label="Close"></button>
+        </div>
+        <div id="navmens" class="headernav" onmouseover="shownavmens()" onmouseout="hidenavmens()">
+            <ul class="w-50">CLOTHING
+                <hr>
+                <div class="d-flex">
+                    <div class="w-50">
+                        <li>New Arrivals</li>
+                        <li>L/S Tops</li>
+                        <li>L/S Shirts</li>
+                        <li>Knits</li>
+                        <li>Pants</li>
+                        <li>Jackets</li>
+                    </div>
+                    <div class="w-50">
+                        <li>Sweats</li>
+                        <li>Tops & Tees</li>
+                        <li>S/S Shirts</li>
+                        <li>Shorts</li>
+                        <li>Accessories</li>
+                        <li>Gift Cards</li>
+                    </div>
+                </div>
+            </ul>
+            <ul class="w-50">EDITS
+                <hr>
+                <li>Academy Icons</li>
+                <li>Live in Linens</li>
+                <li>Best of the Blues</li>
+                <li>Let's Get Loud</li>
+                <li>Seasonal Outfitting</li>
+            </ul>
+        </div>
+        <div id="navwomens" class="headernav" onmouseover="shownavwomens()" onmouseout="hidenavwomens()">
+            <ul class="w-100">CLOTHING
+                <hr>
+                <div class="d-flex">
+                    <div class="w-50">
+                        <li>New Arrivals</li>
+                        <li>Tops & Tees</li>
+                        <li>Shirts</li>
+                    </div>
+                    <div class="w-50">
+                        <li>Bottoms</li>
+                        <li>Jackets</li>
+                        <li>Sweats</li>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div id="navkids" class="headernav" onmouseover="shownavkids()" onmouseout="hidenavkids()">
+            <ul class="w-100">ACADEMY ROOKIE
+                <hr>
+                <li>Kids New Arrivals</li>
+                <li>Kids Tees</li>
+                <li>Kids Shirts</li>
+                <li>Kids Tops</li>
+                <li>Kids Shorts</li>
+                <li>Kids Pants</li>
+                <li>Kids Knitwear</li>
+                <li>Kids Jackets</li>
+                <li>Kids Sweats</li>
+            </ul>
+        </div>
+    </header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/Homepage_Hero_1800x850_6d9594fa-6363-4679-868c-2da1d6a0b853_2000x.jpg?v=1649916464"
+                    alt="" class="d-none d-md-block" style="width:100%">
+                <div class="carousel-caption">
+                    <p>AW22</p>
+                    <h1>NEW SEASON</h1>
+                    <button class="btn-outline-dark">SHOP MENS</button><button class="btn-outline-dark">SHOP
+                        WOMENS</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/Homepage_Hero_1800x8502_f86888f2-46fc-4c44-8cbd-d29dd7f1840d_2000x.jpg?v=1649916464"
+                    alt="" class="d-none d-md-block w-100">
+                <div class="carousel-caption">
+                    <p>NEW ARRIVALS</p>
+                    <h1>ACADEMY SWEATS RANGE</h1>
+                    <button class="btn-outline-dark">SHOP NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/Homepage_Hero_1800x8503_fc53b851-6ec8-47ed-98d3-00285d358f5c_2000x.jpg?v=1649916464"
+                    alt="" class="d-none d-md-block w-100">
+                <div class="carousel-caption">
+                    <p>New ARRIVALS</p>
+                    <h1>ACADEMY SWEATS RANGE</h1>
+                    <button class="btn-outline-dark">SHOP NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.shopify.com/s/files/1/0004/3686/3040/files/Homepage_Hero_1800x8504_c4578735-312b-4fb8-a254-073de5e1d3af_2000x.jpg?v=1649916464"
+                    alt="" class="d-none d-md-block w-100">
+                <div class="carousel-caption">
+                    <p>AW22</p>
+                    <h1>ACADEMY ROOKIE</h1>
+                    <button class="btn-outline-dark">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <p class="fw-bold w3-margin">BEST SELLERS</p>
+        <button class="tablinks" onclick="openTab(event, 'mens')" id="defaultOpen">MENS</button>
+        <button class="tablinks" onclick="openTab(event, 'womens')">WOMENS</button>
+    </div>
+    <div id="mens" class="tabcontent w-100 small">
+        <div>
+            <div class="mySlides1">
+                <div class="d-flex">
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/22W203-ALLTERRAINSHIRTJACKET-ARMY_B_400x.jpg?v=1649209184"
+                            alt="">
+                        <p>All Terrain Shirt Jacket<br>
+                            ARMY<br>
+                            $149.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/BA100_CooperChino_Coffee_B_400x.jpg?v=1615433199"
+                            alt="">
+                        <p>Cooper Slim Chino<br>
+                            COFFEE<br>
+                            $89.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/20W878_VintageOxford_Moss14072_E_400x.jpg?v=1612329594"
+                            alt="">
+                        <p>Vintage Oxford Shirt<br>
+                            MOSS<br>
+                            $79.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/17W715-WORKERSCREW-GREYMARLE_D_400x.jpg?v=1646027444"
+                            alt="">
+                        <p>WORKERS CREW<br>
+                            GREY MARLE<br>
+                            $39.95</p>
+                    </div>
+                    <div class="d-flex align-items-center w3-margin"><button class="w3-button w3-black"
+                            onclick="plusDivs1(1)">&#10095;</button></div>
+                </div>
+            </div>
+            <div class="mySlides1">
+                <div class="d-flex">
+                    <div class="d-flex align-items-center w3-margin"><button class="w3-button w3-black"
+                            onclick="plusDivs1(-1)">&#10094;</button></div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/22W205-ESSENTIALOVERSHIRT-NAVY_C_400x.jpg?v=1646100179"
+                            alt="">
+                        <p>Essential Overshirt<br>
+                            NAVY<br>
+                            $99.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/22W555-ACADEMYCREWSWEAT-BLACK_B_400x.jpg?v=1647565872"
+                            alt="">
+                        <p>Academy Crew Sweat<br>
+                            BLACK<br>
+                            $59.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/22W480-ACADEMYMERINOCREW-NATURAL_D_400x.jpg?v=1647482606"
+                            alt="">
+                        <p>Academy Merino Crew<br>
+                            NATURAL<br>
+                            $99.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/22W424-SYCAMORELSCREW-WHEAT_C_400x.jpg?v=1647562797"
+                            alt="">
+                        <p>Sycamore Long Sleeve Crew<br>
+                            WHEAT<br>
+                            $49.95</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="womens" class="tabcontent w-100 small">
+        <div class="slidecontent">
+            <div class="mySlides2">
+                <div class="d-flex">
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22S401EssentialRibTank_Army_B_400x.jpg?v=1637273460"
+                            alt="">
+                        <p>Essential Rib Tank<br>
+                            ARMY<br>
+                            $39.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W812-FrankieShirt-White_B_400x.jpg?v=1646103471"
+                            alt="">
+                        <p>Frankie Poplin Shirt<br>
+                            WHITE<br>
+                            $79.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W805-LebowskiCordOvershirt-Flint_D_400x.jpg?v=1647841012"
+                            alt="">
+                        <p>Lebowski Cord Overshirt<br>
+                            FLINT<br>
+                            $99.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W403-JimmyBFTee-Almond_B_400x.jpg?v=1645668005"
+                            alt="">
+                        <p>Jimmy BF Tee<br>
+                            ALMOND<br>
+                            $39.95</p>
+                    </div>
+                    <div class="d-flex align-items-center w3-margin"><button class="w3-button w3-black"
+                            onclick="plusDivs2(1)">&#10095;</button></div>
+                </div>
+            </div>
+            <div class="mySlides2">
+                <div class="d-flex">
+                    <div class="d-flex align-items-center w3-margin"><button class="w3-button w3-black"
+                            onclick="plusDivs2(-1)">&#10094;</button></div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W105-EssentialKnitPant-black_B_20e11079-2206-4c3c-946a-dc23bc7513e4_400x.jpg?v=1646971201"
+                            alt="">
+                        <p>Essential Knit Pant<br>
+                            BLACK<br>
+                            $89.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W201-StandardJacket-WinterWhite_C_400x.jpg?v=1646103094"
+                            alt="">
+                        <p>Essential Overshirt<br>
+                            WINTER WHITE<br>
+                            $99.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22S801HamptonLS_Black_C_400x.jpg?v=1637206490"
+                            alt="">
+                        <p>Hampton Linen Shirt<br>
+                            BLACK<br>
+                            $89.95</p>
+                    </div>
+                    <div class="w-25 w3-margin"><img class="w-100"
+                            src="https://cdn.shopify.com/s/files/1/0004/3686/3040/products/AW22W555-AcademyCrewSweat-WinterMoss_C_400x.jpg?v=1647925065"
+                            alt="">
+                        <p>Academy Crew Sweat<br>
+                            WINTER MOSS<br>
+                            $59.95</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn-dark">VIEW ALL PRODUCTS</button>
+    </div>
+    <div>
+        <div><img src="..." alt=""></div>
+        <div><img src="..." alt=""></div>
+        <div><img src="..." alt=""></div>
+    </div>
+    <div class="text-center small">
+        <p>@ACADEMYBRAND ON INSTAGRAM</p>
+        <div><img src="..." alt=""></div>
+        <div><img src="..." alt=""></div>
+        <div><img src="..." alt=""></div>
+        <div><img src="..." alt=""></div>
+        <button class="btn-outline-dark">SHOP INSTAGRAM</button>
+    </div>
+    <footer>
+        <hr>
+        <div class="container d-flex justify-content-between small">
+            <div class="d-flex">
+                <ul> SHOP
+                    <li>Mens</li>
+                    <li>Gift Cards</li>
+                </ul>
+                <ul>HELP
+                    <li>Help and FAQs</li>
+                    <li>Contact</li>
+                    <li>Shipping</li>
+                    <li>Returns</li>
+                    <li>Privacy Policy</li>
+                    <li>Legal</li>
+                </ul>
+                <ul>DISCOVER
+                    <li>Stores</li>
+                    <li>Academy Rewards</li>
+                    <li>Afterpay</li>
+                    <li>Check Gift Card Balance</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Spend & Earn Rewards</h4>
+                <p>Join Academy Rewards to receive a $10 Welcome reward and earn as you spend.</p>
+                <button class="btn-dark">JOIN NOW</button><br><br>
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="container small">
+            © 2020 ACADEMY BRAND
+        </div>
+    </footer>
+</body>
+
+</html>

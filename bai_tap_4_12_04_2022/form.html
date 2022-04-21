@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bài tập 4</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <label for="text">Nhập văn bản</label><br>
+                <input type="text" id="demo" placeholder="Nhập 1 đoạn văn bản bất kỳ">
+                <button type="button" class="btn btn-primary" onclick="myFunction()">Kết quả</button>
+            </form> 
+            <h2 id="ketqua"></h2>
+            <script>
+                function myFunction() {
+                    let x = document.getElementById("demo").value;
+                    let y = x.split(' ');
+                    console.log(y);  
+                    console.log(y.sort(function() {  
+                    return Math.random() - 0.5
+                    }));
+                    let z = y.join(" ")
+                    document.getElementById("ketqua").innerHTML = z;
+                }
+            </script>
+        </div>
+    </body>
+</html>

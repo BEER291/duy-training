@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.content p {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.tabcontent {
+  display: none;
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+.leftheader a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
+
+.rightheader button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: small;
+}
+
+.dropdown {
+  z-index: 1;
+}
+
+.dropdown button {
+  color: white;
+}
+
+.dropdown ul {
+  font-size: small;
+}
+
+.nav a {
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.headernav {
+  display: none;
+  padding: 1rem;
+  border-top: 1px solid black;
+  background-color: white;
+}
+
+.headernav input {
+  width: 90%;
+  margin: 0 1rem 0 1rem;
+}
+
+.offcanvas-body {
+  font-size: smaller;
+}
+
+.offcanvas-body p {
+  padding: 0.5rem;
+  border: 0;
+  margin: 0;
+}
+
+.offcanvas-body hr {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.headernav ul {
+  list-style: none;
+  font-size: small;
+}
+
+.tab {
+  text-align: center;
+
+}
+
+.tab button {
+  background: transparent;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  font-size: small;
+}
+
+.tab button:hover {
+  text-decoration: underline;
+}
+
+.tabcontent {
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+.mySlides1 {
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+.mySlides2 {
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.btn-dark {
+  font-size: small;
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline-dark {
+  font-size: small;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
+
+footer ul {
+  font-weight: bold;
+  list-style: none;
+}
+
+footer ul li {
+  font-weight: normal;
+}
+
+.small {
+  font-size: smaller;
+}
+
+.scrolled {
+  background: white;
+}
+
+.scrolled a {
+  color: black;
+}
+
+.scrolled a:hover {
+  color: black;
+}
+
+.scrolled button {
+  color: black;
+}
+
+.logo1 {
+  display: block;
+}
+
+.logo2 {
+  display: none;
+}
