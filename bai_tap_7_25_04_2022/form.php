@@ -8,20 +8,23 @@
     </body>
 </html>
 <?php
-    
-        $n = $_GET["number"];
-        $x = 2;
-        $test = array();
-        for ($i = 0; $i < $n; $i++) {
-            if ($i % 2 == 0) {
-                $test[] = $x;
-                $x = $x - 0.5;
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (isset($_GET["number"])) {
+                $n = $_GET["number"];
+                $x = 2;
+                $test = array();
+                for ($i = 0; $i < $n; $i++) {
+                    if ($i % 2 == 0) {
+                        $test[] = $x;
+                        $x = $x - 0.5;
+                    }
+                    else {
+                        $test[] = -1;
+                    }
+                }
+                echo "Kết quả là: <br>";
+                foreach ($test as $item)
+                echo "<$item <br>";
             }
-            else {
-                $test[] = -1;
-            }
-        }
-        echo "Kết quả là: <br>";
-        foreach ($test as $item)
-        echo "<$item <br>";
+        } 
 ?>
