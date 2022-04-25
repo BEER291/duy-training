@@ -24,7 +24,7 @@
                 }
                 echo "Kết quả là: <br>";
                 foreach ($test as $item)
-                echo "<$item <br>";
+                echo "$item <br>";
             }
         } 
 ?>
