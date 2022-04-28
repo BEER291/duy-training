@@ -19,17 +19,23 @@ if (!$ket_qua) {
     exit();
 }
 
-function myFunction ($category_name) {
+function myFunction($category_name) {
     $array = explode(',', $category_name);
-    for ($i = 0; $i < count($array); $i++ ) {
-        if ($array[$i] == 1) {
-            $array[$i] = "PC GVN GAMING";
-        }
-        else {
-            $array[$i] = "PC GVN VĂN PHÒNG";
+    $username = "user_demo";
+    $password = "123456";
+    $server   = "localhost";
+    $dbname   = "demo";
+
+$connect = new mysqli($server, $username, $password, $dbname);
+    for ($i = 0; $i < count($array); $i++) {
+        $sql2 = "SELECT name FROM danhmuc WHERE id = $array[$i]";
+        $ket_qua2 = $connect->query($sql2);
+        $row = $ket_qua2->fetch_array(MYSQLI_ASSOC);
+        foreach ($row as $value) {
+            $array2[] = $value;
         }
     }
-    $string = implode(", ", $array);
+    $string = implode(", ", $array2);
     echo $string;
 }
 
