@@ -64,19 +64,31 @@
 </table>
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
+  <li class="page-item <?php if($_GET["page"] == 1){
+      echo "disabled";
+  }
+   ?>"><a class="page-link " href="index.php?page=<?php echo ($_GET["page"] - 1)
+  ?>">Previous</a></li>
     <?php
     $sql_page = mysqli_query($connect, "SELECT * FROM products");
     $row_count = mysqli_num_rows($sql_page);
     $page = ceil($row_count/5);
-    for($i = 1; $i <= $page; $i++){
-    ?>
-    <li class="page-item">
+    for($i = 1; $i <= $page; $i++){?>
+    <li class="page-item <?php if($_GET["page"] == $i){
+      echo " active";
+  }
+   ?>">
       <a class="page-link" href="index.php?page=<?php echo $i; ?>">
         <?php echo $i; ?>
     </a>
     </li>
     <?php }
     ?>
+     <li class="page-item <?php if($_GET["page"] == $page){
+      echo "disabled";
+  }
+   ?>"><a class="page-link" href="index.php?page=<?php echo ($_GET["page"] + 1)
+  ?>">Next</a></li>
 </nav>
 <a class="btn btn-primary" href="index.php?page_layout=add">Thêm sản phẩm</a>
     </div>
