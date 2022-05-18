@@ -2,7 +2,8 @@
     $prdofpage = 5;
     if(isset($_GET["page"])){
       $page = $_GET["page"];
-    }else{
+    }
+    else{
       $page =1; 
     }
     settype($page, "int");
@@ -31,7 +32,7 @@
       <th scope="col">Xóa</th>
     </tr>
   </thead>
-  <tbody id="paginate" >
+  <tbody>
     <?php
     $i = 1;
       while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){?>
@@ -94,3 +95,19 @@
     </div>
   </div>
 </div>
+<script>
+        $('nav').on('click', '.pagination li a', function (e) {
+            e.preventDefault();
+            let url = $(this).attr('href');
+              $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'text',
+                success: function (response) {
+                    $('body').html(response);
+                    console.log(url);
+                }
+              });
+            });
+
+</script>
